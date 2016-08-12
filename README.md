@@ -9,7 +9,6 @@
 
 # Instllation
 
-## npm
 ``` bash
 $ npm install vue-top-progress
 ```
