@@ -30,7 +30,7 @@ let queue = (() => {
   }
 })()
 
-export default {
+module.exports = {
   template: `
     <div class="top-progress" :style="barStyle" v-if="show">
       <div class="peg" :style="pegStyle">
