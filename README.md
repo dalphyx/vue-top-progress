@@ -1,4 +1,4 @@
-# vue-top-progress
+# vue-top-progress [![npm version](https://badge.fury.io/js/vue-top-progress.svg)](https://badge.fury.io/js/vue-top-progress)
 
 > Yet another top progress loading bar component for Vue.js.
 
