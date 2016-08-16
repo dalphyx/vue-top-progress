@@ -12,6 +12,8 @@
 ``` bash
 $ npm install vue-top-progress
 ```
+# Demo
+[Demo](https://dalphyx.github.io/vue-top-progress/)
 
 # Usage
 ``` html
