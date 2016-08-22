@@ -70,7 +70,7 @@ exports.default = {
 /* 4 */
 /***/ function(module, exports) {
 
-module.exports = "\n<div class=\"app\">\n  <top-progress ref=\"topProgress\"></top-progress>\n  <div class=\"container\">\n    <h1 class=\"title\">vue-top-progress</h1>\n    <div class=\"actions\">\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.start()\">\n          Start\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.pause()\">\n          Pause\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.done()\">\n          Done\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.fail()\">\n          Fail\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.increase(20)\">\n          increase(20)\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.decrease(20)\">\n          decrease(20)\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.set(20)\">\n          set(20)\n        </div>\n      </div>\n    </div>\n\n    <div class=\"text-center\">\n      <a class=\"button green download\" href=\"https://github.com/dalphyx/vue-top-progress\">\n        Download\n      </a>\n    </div>\n  </div>\n</div>\n";
+module.exports = "\n<div class=\"app\">\n  <top-progress ref=\"topProgress\"></top-progress>\n  <div class=\"container\">\n    <h1 class=\"title\">vue-top-progress</h1>\n    <div class=\"actions\">\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.start()\">\n          Start\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.pause()\">\n          Pause\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.done()\">\n          Done\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.fail()\">\n          Fail\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.increase(20)\">\n          Increase(20)\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.decrease(20)\">\n          Decrease(20)\n        </div>\n      </div>\n      <div class=\"action\">\n        <div class=\"button\" @click=\"$refs.topProgress.set(20)\">\n          Set(20)\n        </div>\n      </div>\n    </div>\n\n    <div class=\"text-center\">\n      <a class=\"button green download\" href=\"https://github.com/dalphyx/vue-top-progress\">\n        Download\n      </a>\n    </div>\n  </div>\n</div>\n";
 
 /***/ },
 /* 5 */
@@ -110,10 +110,17 @@ let queue = (() => {
 
 module.exports = {
   template: `
-    <div class="top-progress" :style="barStyle" v-if="show">
-      <div class="peg" :style="pegStyle">
+    <transition
+      v-on:before-enter="beforeEnter"
+      v-on:enter="enter"
+      v-on:after-enter="afterEnter"
+      v-bind:css="false"
+    >
+      <div class="top-progress" :style="barStyle" v-if="show">
+        <div class="peg" :style="pegStyle">
+        </div>
       </div>
-    </div>
+    </transition>
   `,
 
   data () {
@@ -205,6 +212,7 @@ module.exports = {
         right: '0',
         width: '100px',
         height: '100%',
+        opacity: this.progress ? '1' : '0',
         boxShadow: `0 0 10px ${this.progressColor}, 0 0 5px ${this.progressColor}`,
         transform: 'rotate(3deg) translate(0px, -4px)'
       }
@@ -212,9 +220,24 @@ module.exports = {
   },
 
   methods: {
+    beforeEnter (el) {
+      this.opacity = 0
+      this.progress = 0
+      this.width = 0
+    },
+
+    enter (el, done) {
+      this.opacity = 1
+      done()
+    },
+
+    afterEnter (el) {
+      this._runStart()
+    },
+
     _work () {
       setTimeout(() => {
-        if (!this.isStarted || !this.status || this.isPaused) {
+        if (!this.isStarted || this.isPaused) {
           return
         }
         this.increase()
@@ -222,29 +245,26 @@ module.exports = {
       }, this.trickleSpeed)
     },
 
-    start () {
-      this.isPaused = false
-
-      if (!this.status) {
-        this.set(0)
-      }
+    _runStart () {
+      this.status = (this.progress === 100 ? null : this.progress)
 
       if (this.trickle) {
         this._work()
       }
     },
 
-    set (amount) {
+    start () {
       this.isPaused = false
 
-      if (!this.show) {
-        this.display()
-        this.set(0)
-        setTimeout(() => {
-          this.set(amount)
-        }, 10)
-        return
+      if (this.show) {
+        this._runStart()
+      } else {
+        this.show = true
       }
+    },
+
+    set (amount) {
+      this.isPaused = false
 
       let o
       if (this.isStarted) {
@@ -263,7 +283,6 @@ module.exports = {
           setTimeout(() => {
             this.opacity = 0
             setTimeout(() => {
-              this.progress = 0
               this.show = false
               this.error = false
               next()
@@ -278,26 +297,20 @@ module.exports = {
     increase (amount) {
       let o = this.progress
 
-      if (!o) {
-        this.set(amount)
-      } else if (o >= 100) {
-        return
-      } else {
-        if (typeof amount !== 'number') {
-          if (o >= 0 && o < 25) {
-            amount = Math.random() * 3 + 3
-          } else if (o >= 25 && o < 50) {
-            amount = Math.random() * 3
-          } else if (o >= 50 && o < 85) {
-            amount = Math.random() * 2
-          } else if (o >= 85 && o < 99) {
-            amount = 0.5
-          } else {
-            amount = 0
-          }
+      if (o < 100 && typeof amount !== 'number') {
+        if (o >= 0 && o < 25) {
+          amount = Math.random() * 3 + 3
+        } else if (o >= 25 && o < 50) {
+          amount = Math.random() * 3
+        } else if (o >= 50 && o < 85) {
+          amount = Math.random() * 2
+        } else if (o >= 85 && o < 99) {
+          amount = 0.5
+        } else {
+          amount = 0
         }
-        this.set(clamp(o + amount, 0, this.maximum))
       }
+      this.set(clamp(o + amount, 0, this.maximum))
     },
 
     decrease (amount) {
@@ -322,12 +335,6 @@ module.exports = {
     fail () {
       this.error = true
       this.done()
-    },
-
-    display () {
-      this.opacity = 1
-      this.show = true
-      this.progress = 0
     }
   }
 }
