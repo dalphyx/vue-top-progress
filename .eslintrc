@@ -1,6 +1,3 @@
 {
-  "extends": "dalphyx",
-  "env": {
-    "browser": true
-  }
+  "extends": "dalphyx"
 }

@@ -190,9 +190,9 @@ module.exports = {
 
       let o
       if (this.isStarted) {
-        o = amount < this.progress ?
-          clamp(amount, 0, 100) :
-          clamp(amount, this.minimum, 100)
+        o = amount < this.progress
+          ? clamp(amount, 0, 100)
+          : clamp(amount, this.minimum, 100)
       } else {
         o = 0
       }

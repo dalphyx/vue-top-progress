@@ -28,6 +28,6 @@
   "homepage": "https://github.com/dalphyx/vue-top-progress#readme",
   "devDependencies": {
     "eslint": "^3.2.2",
-    "eslint-config-dalphyx": "0.0.4"
+    "eslint-config-dalphyx": "^0.1.0"
   }
 }
