@@ -79,6 +79,10 @@ Minimum percentage used upon starting. Default: `0.8`
 
 By default behavior, when progress start, it will never get to 100% until `done` or `fail` to be called. Setting this to adjust maximum percentage. Default: `97.5`
 
+`zIndex`
+
+The z-index of component. Default: `9999`
+
 # License
 
 [The MIT License](http://opensource.org/licenses/MIT)

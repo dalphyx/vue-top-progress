@@ -100,6 +100,11 @@ module.exports = {
     maximum: {
       type: Number,
       default: 97.5
+    },
+
+    zIndex: {
+      type: Number,
+      default: 9999
     }
   },
 
@@ -123,7 +128,7 @@ module.exports = {
         backgroundColor: this.progressColor,
         transition: `all ${this.speed}ms ${this.easing}`,
         opacity: `${this.opacity}`,
-        zIndex: 9999
+        zIndex: `${this.zIndex}`
       }
     },
 
