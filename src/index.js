@@ -30,7 +30,7 @@ let queue = (() => {
   }
 })()
 
-module.exports = {
+export default {
   template: `
     <transition
       v-on:before-enter="beforeEnter"
