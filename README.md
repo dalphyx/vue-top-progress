@@ -5,7 +5,7 @@
 # Requirements
 
 - [Vue.js](https://github.com/vuejs/vue) `^2.0.0`
-- [Babel](https://github.com/babel/babel) for compile es6 code
+- Module bundler: [webpack](https://github.com/webpack/webpack)
 
 # Installation
 
