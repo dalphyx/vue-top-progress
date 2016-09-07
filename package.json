@@ -4,7 +4,7 @@
   "description": "Yet another top progress loading bar component for Vue.js",
   "main": "./dist/vue-top-progress.js",
   "scripts": {
-    "lint": "eslint ./vue-top-progress.js",
+    "lint": "eslint ./src/**",
     "build": "node build"
   },
   "repository": {
