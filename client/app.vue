@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import topProgress from 'vue-top-progress'
+import topProgress from '../../src/'
 
 export default {
   mounted () {

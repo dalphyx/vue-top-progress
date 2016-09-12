@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const { resolve } = require('path')
 const pokore = require('pokore')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const autoprefixer = require('autoprefixer')
 
 function isProduction () {
   return process.env.NODE_ENV === 'production'
@@ -15,7 +14,7 @@ const webpackConfig = {
 }
 
 webpackConfig.entry = {
-  app: './client/main.js',
+  app: './docs/client/main.js',
   vendor: [
     'vue'
   ]
