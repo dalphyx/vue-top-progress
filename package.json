@@ -5,7 +5,9 @@
   "main": "./dist/vue-top-progress.js",
   "scripts": {
     "lint": "eslint ./src/**",
-    "build": "node build"
+    "build": "node build",
+    "build-docs": "webpack --config ./docs/webpack.config.js",
+    "gh-docs": "gh-pages -d docs -m 'Deployed to Github Pages'"
   },
   "repository": {
     "type": "git",
@@ -28,11 +30,22 @@
   },
   "homepage": "https://github.com/dalphyx/vue-top-progress#readme",
   "devDependencies": {
+    "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-stage-2": "^6.13.0",
+    "css-loader": "^0.25.0",
     "eslint": "^3.2.2",
     "eslint-config-dalphyx": "^0.1.0",
+    "eslint-loader": "^1.5.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "gh-pages": "^0.11.0",
+    "pokore": "^0.2.0",
+    "postcss-loader": "^0.13.0",
     "rollup": "^0.34.13",
-    "rollup-plugin-babel": "^2.6.1"
+    "rollup-plugin-babel": "^2.6.1",
+    "style-loader": "^0.13.1",
+    "vue": "^2.0.0-rc.5",
+    "vue-loader": "^9.4.0",
+    "webpack": "^2.1.0-beta.22"
   }
 }
