@@ -4,6 +4,7 @@ webpackJsonp([0],[
 /***/ function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
+var __vue_styles__ = {}
 
 /* styles */
 __webpack_require__(4)
@@ -14,13 +15,17 @@ __vue_exports__ = __webpack_require__(3)
 /* template */
 var __vue_template__ = __webpack_require__(5)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (typeof __vue_exports__.default === "object") {
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
 if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 __vue_options__ = __vue_exports__ = __vue_exports__.default
 }
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
+__vue_options__.__file = "/Users/zuijiao/github/vue-top-progress/docs/client/app.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -31,9 +36,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1", __vue_options__)
+    hotAPI.createRecord("data-v-c44426c4", __vue_options__)
   } else {
-    hotAPI.reload("data-v-1", __vue_options__)
+    hotAPI.reload("data-v-c44426c4", __vue_options__)
   }
 })()}
 if (__vue_options__.functional) {console.error("[vue-loader] app.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -478,13 +483,12 @@ module.exports={render:function (){with(this) {
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-c44426c4", module.exports)
   }
 }
 
 /***/ },
-/* 6 */,
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -511,4 +515,4 @@ if (typeof window !== 'undefined') {
 }
 
 /***/ }
-],[7]);
+],[6]);
