@@ -1,120 +1,104 @@
 const webpack = require('webpack')
-const { resolve } = require('path')
+const path = require('path')
 const pokore = require('pokore')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-function isProduction () {
-  return process.env.NODE_ENV === 'production'
-}
+const postcssPlugins = [
+  pokore.import,
+  pokore.colorAlpha,
+  pokore.extend,
+  pokore.size,
+  pokore.reset,
+  pokore.propertylookup,
+  pokore.autoprefixer,
+  pokore.nested,
+  pokore.sorting({ 'sort-order': pokore.cssortie })
+]
 
 const webpackConfig = {
-  debug: isProduction(),
-  module: {},
-  resolve: {}
-}
-
-webpackConfig.entry = {
-  app: './docs/client/main.js',
-  vendor: [
-    'vue'
-  ]
-}
-
-webpackConfig.output = {
-  filename: '[name].js',
-  path: resolve(__dirname, 'dist')
-}
-
-webpackConfig.module.preLoaders = [
-  {
-    test: /\.js[x]?$/,
-    loader: 'eslint',
-    exclude: /node_modules/
-  }
-]
-
-webpackConfig.module.loaders = [
-  {
-    test: /\.js[x]?$/,
-    loader: 'babel',
-    exclude: /node_modules/
+  entry: {
+    app: './docs/client/main.js',
+    vendor: [
+      'vue'
+    ]
   },
-  {
-    test: /\.vue$/,
-    loader: 'vue'
+
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist')
   },
-  {
-    test: /\.sss$/,
-    loader: ExtractTextPlugin.extract({
-      fallbackLoader: 'style-loader',
-      loader: 'css!postcss',
-      publicPath: "../"
-    })
-  }
-]
 
-webpackConfig.resolve.alias = {
-  'vue': 'vue/dist/vue.js'
-}
+  module: {
+    rules: [
+      {
+        test: /\.js[x]?$/,
+        enforce: 'pre',
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.js[x]?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          postcss: {
+            plugins: postcssPlugins,
+            options: {
+              parser: pokore.sugarss
+            }
+          },
+          loaders: {
+            js: 'babel-loader!eslint-loader'
+          }
+        }
+      },
+      {
+        test: /\.sss$/,
+        loader: ['style-loader', 'css-loader', 'postcss-loader']
+      }
+    ]
+  },
 
-webpackConfig.vue = {
-  postcss: {
-    plugins: [
-      pokore.import({
-        extensions: ['sss']
-      }),
-      pokore.colorAlpha,
-      pokore.extend,
-      pokore.size,
-      pokore.reset,
-      pokore.propertylookup,
-      pokore.autoprefixer,
-      pokore.sorting({ 'sort-order': pokore.cssortie })
-    ],
-    options: {
-      parser: pokore.sugarss
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.js'
     }
   },
-  loaders: {
-    css: ExtractTextPlugin.extract('css'),
-    sss: ExtractTextPlugin.extract('css!postcss')
-  }
-}
 
-webpackConfig.plugins = [
-  new ExtractTextPlugin({
-    filename: "./css/[name].css",
-    disable: false,
-    allChunks: true
-  }),
+  resolveLoader: {
+    modules: [path.resolve('.', 'node_modules')]
+  },
 
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor'
-  })
-]
+  plugins: [
+    new ExtractTextPlugin({
+      filename: "./css/[name].css",
+      disable: false,
+      allChunks: true
+    }),
 
-webpackConfig.postcss = _webpack => {
-  return {
-    plugins: [
-      pokore.import({
-        extensions: ['sss'],
-        addDependencyTo: _webpack
-      }),
-      pokore.colorAlpha,
-      pokore.extend,
-      pokore.size,
-      pokore.reset,
-      pokore.propertylookup,
-      pokore.autoprefixer,
-      pokore.sorting({ 'sort-order': pokore.cssortie })
-    ],
-    parser: pokore.sugarss
-  }
-}
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    }),
 
-webpackConfig.eslint = {
-  failOnWarning: false,
-  failOnError: true
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        eslint: {
+          failOnWarning: false,
+          failOnError: true
+        },
+        postcss: (_webpack) => {
+          return {
+            plugins: postcssPlugins,
+            parser: pokore.sugarss
+          }
+        }
+      }
+    })
+  ]
 }
 
 module.exports = webpackConfig
