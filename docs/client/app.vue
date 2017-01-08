@@ -26,17 +26,17 @@
         </div>
         <div class="action">
           <div class="button" @click="$refs.topProgress.increase(20)">
-            increase(20)
+            Increase(20)
           </div>
         </div>
         <div class="action">
           <div class="button" @click="$refs.topProgress.decrease(20)">
-            decrease(20)
+            Decrease(20)
           </div>
         </div>
         <div class="action">
           <div class="button" @click="$refs.topProgress.set(20)">
-            set(20)
+            Set(20)
           </div>
         </div>
       </div>
