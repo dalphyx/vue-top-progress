@@ -424,7 +424,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.$refs.topProgress.increase(20)
       }
     }
-  }, [_vm._v("\n          increase(20)\n        ")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n          Increase(20)\n        ")])]), _vm._v(" "), _c('div', {
     staticClass: "action"
   }, [_c('div', {
     staticClass: "button",
@@ -433,7 +433,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.$refs.topProgress.decrease(20)
       }
     }
-  }, [_vm._v("\n          decrease(20)\n        ")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n          Decrease(20)\n        ")])]), _vm._v(" "), _c('div', {
     staticClass: "action"
   }, [_c('div', {
     staticClass: "button",
@@ -442,7 +442,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.$refs.topProgress.set(20)
       }
     }
-  }, [_vm._v("\n          set(20)\n        ")])])]), _vm._v(" "), _vm._m(0)])], 1)
+  }, [_vm._v("\n          Set(20)\n        ")])])]), _vm._v(" "), _vm._m(0)])], 1)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "text-center"
