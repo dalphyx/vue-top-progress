@@ -4,10 +4,6 @@
 	(global.vueTopProgress = factory());
 }(this, (function () { 'use strict';
 
-/**
- * Helpers
- */
-
 function clamp(n, min, max) {
   if (n < min) {
     return min;
@@ -36,9 +32,9 @@ var queue = function () {
   };
 }();
 
-var index = {
-  template: '\n    <transition\n      v-on:before-enter="beforeEnter"\n      v-on:enter="enter"\n      v-on:after-enter="afterEnter"\n      v-bind:css="false"\n    >\n      <div class="top-progress" :style="barStyle" v-if="show">\n        <div class="peg" :style="pegStyle">\n        </div>\n      </div>\n    </transition>\n  ',
-
+var topProgress$1 = { render: function render() {
+    var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('transition', { attrs: { "css": false }, on: { "before-enter": _vm.beforeEnter, "enter": _vm.enter, "after-enter": _vm.afterEnter } }, [_vm.show ? _c('div', { staticClass: "top-progress", style: _vm.barStyle }, [_c('div', { staticClass: "peg", style: _vm.pegStyle })]) : _vm._e()]);
+  }, staticRenderFns: [],
   data: function data() {
     return {
       error: false,
@@ -116,12 +112,12 @@ var index = {
         top: '0',
         left: '0',
         right: '0',
-        width: this.progress + '%',
-        height: this.height + 'px',
+        width: this.progress + "%",
+        height: this.height + "px",
         backgroundColor: this.progressColor,
-        transition: 'all ' + this.speed + 'ms ' + this.easing,
-        opacity: '' + this.opacity,
-        zIndex: '' + this.zIndex
+        transition: "all " + this.speed + "ms " + this.easing,
+        opacity: "" + this.opacity,
+        zIndex: "" + this.zIndex
       };
     },
     pegStyle: function pegStyle() {
@@ -132,7 +128,7 @@ var index = {
         width: '100px',
         height: '100%',
         opacity: this.progress ? '1' : '0',
-        boxShadow: '0 0 10px ' + this.progressColor + ', 0 0 5px ' + this.progressColor,
+        boxShadow: "0 0 10px " + this.progressColor + ", 0 0 5px " + this.progressColor,
         transform: 'rotate(3deg) translate(0px, -4px)'
       };
     }
@@ -248,6 +244,6 @@ var index = {
   }
 };
 
-return index;
+return topProgress$1;
 
 })));
