@@ -4000,6 +4000,12 @@ rollup-plugin-babel@^2.7.1:
     object-assign "^4.1.0"
     rollup-pluginutils "^1.5.0"
 
+rollup-plugin-uglify@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-uglify/-/rollup-plugin-uglify-1.0.2.tgz#d4aa6f5df13522eae1ba17780c7c4c7096038359"
+  dependencies:
+    uglify-js "^2.6.1"
+
 rollup-plugin-vue@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/rollup-plugin-vue/-/rollup-plugin-vue-2.3.1.tgz#73b30ff0c6d37d87cbd02b6555680cb5c31f3a9e"

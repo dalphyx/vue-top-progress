@@ -1,6 +1,7 @@
 const rollup = require('rollup')
 const babel = require('rollup-plugin-babel')
 const vue = require('rollup-plugin-vue')
+const uglify = require('rollup-plugin-uglify')
 const pkg = require('./package.json')
 
 rollup.rollup({
@@ -21,12 +22,13 @@ rollup.rollup({
         ],
         'stage-2'
       ]
-    })
+    }),
+    uglify()
   ]
 }).then(bundle => {
   bundle.write({
     format: 'umd',
     moduleName: 'vueTopProgress',
-    dest: `./dist/${pkg.name}.js`
+    dest: `./dist/${pkg.name}.min.js`
   })
 })

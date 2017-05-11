@@ -2,7 +2,7 @@
   "name": "vue-top-progress",
   "version": "0.4.0",
   "description": "Yet another top progress loading bar component for Vue.js",
-  "main": "./dist/vue-top-progress.js",
+  "main": "./dist/vue-top-progress.min.js",
   "files": [
     "src",
     "dist"
@@ -47,6 +47,7 @@
     "postcss-loader": "^2.0.5",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-uglify": "^1.0.2",
     "rollup-plugin-vue": "^2.3.1",
     "style-loader": "^0.17.0",
     "vue": "^2.3.3",
