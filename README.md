@@ -18,11 +18,17 @@ $ npm install vue-top-progress
 # Usage
 ``` html
 <template>
-  <top-progress ref="topProgress"></top-progress>
+  <vue-topprogress ref="topProgress"></vue-topprogress>
 </template>
 
 <script>
-import topProgress from 'vue-top-progress'
+import vueTopprogress from 'vue-top-progress'
+
+Vue.use(vueTopprogress)
+
+// or
+
+import { vueTopprogress } from 'vue-top-progress'
 
 export default {
   mounted () {
@@ -35,7 +41,7 @@ export default {
   },
 
   components: {
-    topProgress
+    vueTopprogress
   }
 }
 </script>
