@@ -41,6 +41,8 @@ let queue = (() => {
 })()
 
 export default {
+  name: 'vueTopprogress',
+
   data () {
     return {
       error: false,
