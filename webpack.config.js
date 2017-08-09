@@ -34,12 +34,12 @@ const webpackConfig = {
         test: /\.js[x]?$/,
         enforce: 'pre',
         loader: 'eslint-loader',
-        exclude: /node_modules/
+        exclude: /(node_modules|vue-top-progress)/
       },
       {
         test: /\.js[x]?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /(node_modules|vue-top-progress)/
       },
       {
         test: /\.vue$/,

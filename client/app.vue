@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <top-progress ref="topProgress"></top-progress>
+    <vue-topprogress ref="topProgress"></vue-topprogress>
     <div class="container">
       <h1 class="title">vue-top-progress</h1>
       <div class="actions">
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import topProgress from '../../src/'
+import { vueTopprogress } from '../../dist/vue-top-progress.min'
 
 export default {
   mounted () {
@@ -61,7 +61,7 @@ export default {
     }, 2000)
   },
   components: {
-    topProgress
+    vueTopprogress
   }
 }
 </script>
