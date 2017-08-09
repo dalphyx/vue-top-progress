@@ -1,11 +1,11 @@
-import topProgress from './top-progress.vue'
+import vueTopprogress from './top-progress.vue'
 
 const install = function (Vue, opt = {}) {
   if (install.installed) {
     return
   }
 
-  Vue.component(topProgress.name, topProgress)
+  Vue.component(vueTopprogress.name, vueTopprogress)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -13,6 +13,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  topProgress,
+  vueTopprogress,
   install
 }
