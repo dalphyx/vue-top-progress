@@ -4,7 +4,7 @@
     v-on:enter="enter"
     v-on:after-enter="afterEnter"
     v-bind:css="false">
-    <div class="top-progress" :style="barStyle" v-if="show">
+    <div class="top-progress" :style="barStyle" v-show="show">
       <div class="peg" :style="pegStyle">
       </div>
     </div>
