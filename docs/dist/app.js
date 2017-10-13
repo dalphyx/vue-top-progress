@@ -1,11 +1,12 @@
 webpackJsonp([0],[
 /* 0 */,
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_vue__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
 
@@ -21,22 +22,24 @@ if (typeof window !== 'undefined') {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_eslint_loader_node_modules_vue_loader_lib_selector_type_script_index_0_app_vue__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04bc4b3c_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_app_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_eslint_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_app_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04bc4b3c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_app_vue__ = __webpack_require__(12);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(3)
+  __webpack_require__(4)
 }
-var normalizeComponent = __webpack_require__(8)
+var normalizeComponent = __webpack_require__(9)
 /* script */
 
 /* template */
 
+/* template functional */
+  var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
@@ -44,15 +47,15 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_eslint_loader_node_modules_vue_loader_lib_selector_type_script_index_0_app_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04bc4b3c_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_app_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_eslint_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_app_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04bc4b3c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_app_vue__["a" /* default */],
+  __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
 Component.options.__file = "docs/client/app.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] app.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -64,7 +67,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-04bc4b3c", Component.options)
   } else {
     hotAPI.reload("data-v-04bc4b3c", Component.options)
-  }
+' + '  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -74,23 +77,23 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(4);
+var content = __webpack_require__(5);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("717c9fd6", content, false);
+var update = __webpack_require__(7)("11c8f08e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-04bc4b3c\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./app.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-04bc4b3c\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./app.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-04bc4b3c\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./app.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-04bc4b3c\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./app.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -100,10 +103,10 @@ if(false) {
 }
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(undefined);
+exports = module.exports = __webpack_require__(6)(undefined);
 // imports
 
 
@@ -114,7 +117,7 @@ exports.push([module.i, "\n* {\n  text-rendering: optimizeLegibility;\n  -webkit
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 /*
@@ -196,7 +199,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -215,7 +218,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(7)
+var listToStyles = __webpack_require__(8)
 
 /*
 type StyleObject = {
@@ -417,7 +420,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 /**
@@ -450,17 +453,19 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
 
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
 
 module.exports = function normalizeComponent (
   rawScriptExports,
   compiledTemplate,
+  functionalTemplate,
   injectStyles,
   scopeId,
   moduleIdentifier /* server only */
@@ -484,6 +489,12 @@ module.exports = function normalizeComponent (
   if (compiledTemplate) {
     options.render = compiledTemplate.render
     options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
   }
 
   // scopedId
@@ -524,12 +535,16 @@ module.exports = function normalizeComponent (
     var existing = functional
       ? options.render
       : options.beforeCreate
+
     if (!functional) {
       // inject component registration as beforeCreate hook
       options.beforeCreate = existing
         ? [].concat(existing, hook)
         : [hook]
     } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
       // register for functioal component in vue file
       options.render = function renderWithStyleInjection (h, context) {
         hook.call(context)
@@ -547,11 +562,11 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dist_vue_top_progress_min__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dist_vue_top_progress_min__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dist_vue_top_progress_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__dist_vue_top_progress_min__);
 //
 //
@@ -624,112 +639,169 @@ module.exports = function normalizeComponent (
 });
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define(e):t.vueTopProgress=e()}(this,function(){"use strict";function t(t,e,s){return t<e?e:t>s?s:t}var e=function(){function t(){var s=e.shift();s&&s(t)}var e=[];return function(s){e.push(s),1===e.length&&t()}}(),s={render:function(){var t=this,e=t.$createElement,s=t._self._c||e;return s("transition",{attrs:{css:!1},on:{"before-enter":t.beforeEnter,enter:t.enter,"after-enter":t.afterEnter}},[t.show?s("div",{staticClass:"top-progress",style:t.barStyle},[s("div",{staticClass:"peg",style:t.pegStyle})]):t._e()])},staticRenderFns:[],name:"vueTopprogress",data:function(){return{error:!1,show:!1,progress:0,opacity:1,status:null,isPaused:!1}},props:{speed:{type:Number,default:350},color:{type:String,default:"#29d"},errorColor:{type:String,default:"#f44336"},trickle:{type:Boolean,default:!0},trickleSpeed:{type:Number,default:250},easing:{type:String,default:"linear"},height:{type:Number,default:3},minimum:{type:Number,default:.8},maximum:{type:Number,default:97.5},zIndex:{type:Number,default:9999}},computed:{progressColor:function(){return this.error?this.errorColor:this.color},isStarted:function(){return"number"==typeof this.status},barStyle:function(){return{position:"fixed",top:"0",left:"0",right:"0",width:this.progress+"%",height:this.height+"px",backgroundColor:this.progressColor,transition:"all "+this.speed+"ms "+this.easing,opacity:""+this.opacity,zIndex:""+this.zIndex}},pegStyle:function(){return{display:"block",position:"absolute",right:"0",width:"100px",height:"100%",opacity:this.progress?"1":"0",boxShadow:"0 0 10px "+this.progressColor+", 0 0 5px "+this.progressColor,transform:"rotate(3deg) translate(0px, -4px)"}}},methods:{beforeEnter:function(t){this.opacity=0,this.progress=0,this.width=0},enter:function(t,e){this.opacity=1,e()},afterEnter:function(t){this._runStart()},_work:function(){var t=this;setTimeout(function(){t.isStarted&&!t.isPaused&&(t.increase(),t._work())},this.trickleSpeed)},_runStart:function(){this.status=100===this.progress?null:this.progress,this.trickle&&this._work()},start:function(){this.isPaused=!1,this.show?this._runStart():this.show=!0},set:function(s){var r=this;this.isPaused=!1;var i=void 0;i=this.isStarted?s<this.progress?t(s,0,100):t(s,this.minimum,100):0,this.status=100===i?null:i,e(function(t){r.progress=i,100===i?setTimeout(function(){r.opacity=0,setTimeout(function(){r.show=!1,r.error=!1,t()},r.speed)},r.speed):setTimeout(t,r.speed)})},increase:function(e){var s=this.progress;s<100&&"number"!=typeof e&&(e=s>=0&&s<25?3*Math.random()+3:s>=25&&s<50?3*Math.random():s>=50&&s<85?2*Math.random():s>=85&&s<99?.5:0),this.set(t(s+e,0,this.maximum))},decrease:function(t){0!==this.progress&&this.increase(-t)},done:function(){this.set(100)},getProgress:function(){return this.status?this.progress:0},pause:function(){this.isPaused=!0},fail:function(){this.error=!0,this.done()}}},r=function t(e){arguments.length>1&&void 0!==arguments[1]&&arguments[1];t.installed||e.component(s.name,s)};return"undefined"!=typeof window&&window.Vue&&r(window.Vue),{vueTopprogress:s,install:r}});
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "app"
-  }, [_c('vue-topprogress', {
-    ref: "topProgress"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "container"
-  }, [_c('h1', {
-    staticClass: "title"
-  }, [_vm._v("vue-top-progress")]), _vm._v(" "), _c('div', {
-    staticClass: "actions"
-  }, [_c('div', {
-    staticClass: "action"
-  }, [_c('div', {
-    staticClass: "button",
-    on: {
-      "click": function($event) {
-        _vm.$refs.topProgress.start()
-      }
-    }
-  }, [_vm._v("\n          Start\n        ")])]), _vm._v(" "), _c('div', {
-    staticClass: "action"
-  }, [_c('div', {
-    staticClass: "button",
-    on: {
-      "click": function($event) {
-        _vm.$refs.topProgress.pause()
-      }
-    }
-  }, [_vm._v("\n          Pause\n        ")])]), _vm._v(" "), _c('div', {
-    staticClass: "action"
-  }, [_c('div', {
-    staticClass: "button",
-    on: {
-      "click": function($event) {
-        _vm.$refs.topProgress.done()
-      }
-    }
-  }, [_vm._v("\n          Done\n        ")])]), _vm._v(" "), _c('div', {
-    staticClass: "action"
-  }, [_c('div', {
-    staticClass: "button",
-    on: {
-      "click": function($event) {
-        _vm.$refs.topProgress.fail()
-      }
-    }
-  }, [_vm._v("\n          Fail\n        ")])]), _vm._v(" "), _c('div', {
-    staticClass: "action"
-  }, [_c('div', {
-    staticClass: "button",
-    on: {
-      "click": function($event) {
-        _vm.$refs.topProgress.increase(20)
-      }
-    }
-  }, [_vm._v("\n          Increase(20)\n        ")])]), _vm._v(" "), _c('div', {
-    staticClass: "action"
-  }, [_c('div', {
-    staticClass: "button",
-    on: {
-      "click": function($event) {
-        _vm.$refs.topProgress.decrease(20)
-      }
-    }
-  }, [_vm._v("\n          Decrease(20)\n        ")])]), _vm._v(" "), _c('div', {
-    staticClass: "action"
-  }, [_c('div', {
-    staticClass: "button",
-    on: {
-      "click": function($event) {
-        _vm.$refs.topProgress.set(20)
-      }
-    }
-  }, [_vm._v("\n          Set(20)\n        ")])])]), _vm._v(" "), _vm._m(0)])], 1)
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "app" },
+    [
+      _c("vue-topprogress", { ref: "topProgress" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c("h1", { staticClass: "title" }, [_vm._v("vue-top-progress")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "actions" }, [
+          _c("div", { staticClass: "action" }, [
+            _c(
+              "div",
+              {
+                staticClass: "button",
+                on: {
+                  click: function($event) {
+                    _vm.$refs.topProgress.start()
+                  }
+                }
+              },
+              [_vm._v("\n          Start\n        ")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "action" }, [
+            _c(
+              "div",
+              {
+                staticClass: "button",
+                on: {
+                  click: function($event) {
+                    _vm.$refs.topProgress.pause()
+                  }
+                }
+              },
+              [_vm._v("\n          Pause\n        ")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "action" }, [
+            _c(
+              "div",
+              {
+                staticClass: "button",
+                on: {
+                  click: function($event) {
+                    _vm.$refs.topProgress.done()
+                  }
+                }
+              },
+              [_vm._v("\n          Done\n        ")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "action" }, [
+            _c(
+              "div",
+              {
+                staticClass: "button",
+                on: {
+                  click: function($event) {
+                    _vm.$refs.topProgress.fail()
+                  }
+                }
+              },
+              [_vm._v("\n          Fail\n        ")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "action" }, [
+            _c(
+              "div",
+              {
+                staticClass: "button",
+                on: {
+                  click: function($event) {
+                    _vm.$refs.topProgress.increase(20)
+                  }
+                }
+              },
+              [_vm._v("\n          Increase(20)\n        ")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "action" }, [
+            _c(
+              "div",
+              {
+                staticClass: "button",
+                on: {
+                  click: function($event) {
+                    _vm.$refs.topProgress.decrease(20)
+                  }
+                }
+              },
+              [_vm._v("\n          Decrease(20)\n        ")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "action" }, [
+            _c(
+              "div",
+              {
+                staticClass: "button",
+                on: {
+                  click: function($event) {
+                    _vm.$refs.topProgress.set(20)
+                  }
+                }
+              },
+              [_vm._v("\n          Set(20)\n        ")]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
+      ])
+    ],
+    1
+  )
 }
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "text-center"
-  }, [_c('a', {
-    staticClass: "button green download",
-    attrs: {
-      "href": "https://github.com/dalphyx/vue-top-progress"
-    }
-  }, [_vm._v("\n        Download\n      ")])])
-}]
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c(
+        "a",
+        {
+          staticClass: "button green download",
+          attrs: { href: "https://github.com/dalphyx/vue-top-progress" }
+        },
+        [_vm._v("\n        Download\n      ")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-04bc4b3c", esExports)
+    require("vue-hot-reload-api")      .rerender("data-v-04bc4b3c", esExports)
   }
 }
 
 /***/ })
-],[1]);
+],[2]);
