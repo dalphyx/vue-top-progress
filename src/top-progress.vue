@@ -65,6 +65,8 @@ export default {
       default: '#29d'
     },
 
+    colorShadow: String,
+
     errorColor: {
       type: String,
       default: '#f44336'
@@ -115,6 +117,10 @@ export default {
       return typeof this.status === 'number'
     },
 
+    boxShadow () {
+      return this.colorShadow || this.progressColor
+    },
+
     barStyle () {
       return {
         position: 'fixed',
@@ -138,7 +144,7 @@ export default {
         width: '100px',
         height: '100%',
         opacity: this.progress ? '1' : '0',
-        boxShadow: `0 0 10px ${this.progressColor}, 0 0 5px ${this.progressColor}`,
+        boxShadow: `0 0 10px ${this.boxShadow}, 0 0 5px ${this.boxShadow}`,
         transform: 'rotate(3deg) translate(0px, -4px)'
       }
     }
