@@ -60,6 +60,10 @@ Transition function. Default: `linear`
 
 Color of progress bar. Default: `#29d`
 
+`colorShadow`
+
+Shadow of progress bar. If omitted, will use progress bar color.
+
 `errorColor`
 
 Color of progress bar when status is error. Default: `#f44336`

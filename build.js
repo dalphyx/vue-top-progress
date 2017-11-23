@@ -5,7 +5,7 @@ const uglify = require('rollup-plugin-uglify')
 const pkg = require('./package.json')
 
 rollup.rollup({
-  entry: './src/index.js',
+  input: './src/index.js',
   plugins: [
     vue({
       compileTemplate: true
@@ -28,7 +28,7 @@ rollup.rollup({
 }).then(bundle => {
   bundle.write({
     format: 'umd',
-    moduleName: 'vueTopProgress',
-    dest: `./dist/${pkg.name}.min.js`
+    name: 'vueTopProgress',
+    file: `./dist/${pkg.name}.min.js`
   })
 })
