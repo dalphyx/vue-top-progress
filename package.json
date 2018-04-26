@@ -10,8 +10,9 @@
   "scripts": {
     "lint": "eslint ./src/**",
     "build": "node build",
-    "build-docs": "poi build",
-    "gh-docs": "npm run build-docs && gh-pages -d 'docs/dist' -m 'Deployed to Github Pages'"
+    "docs:dev": "poi",
+    "docs:build": "poi build",
+    "gh-docs": "npm run docs:build && gh-pages -d 'docs/dist' -m 'Deployed to Github Pages'"
   },
   "repository": {
     "type": "git",

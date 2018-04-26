@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { vueTopprogress } from '@/index'
+import { vueTopprogress } from '../../dist/vue-top-progress.min'
 
 export default {
   mounted () {
