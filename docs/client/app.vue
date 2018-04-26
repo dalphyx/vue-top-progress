@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { vueTopprogress } from '../../dist/vue-top-progress.min'
+import { vueTopprogress } from '@/index'
 
 export default {
   mounted () {
@@ -66,7 +66,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus">
 *
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased

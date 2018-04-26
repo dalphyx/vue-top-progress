@@ -15,12 +15,24 @@ rollup.rollup({
       exclude: 'node_modules/**',
       presets: [
         [
-          'es2015',
+          "@babel/preset-env",
           {
-            'modules': false
+            "modules": false,
+            "loose": true,
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "ie >= 9"
+              ]
+            }
           }
         ],
-        'stage-2'
+        [
+          "@babel/preset-stage-2",
+          {
+            "decoratorsLegacy": true
+          }
+        ]
       ]
     }),
     uglify()

@@ -10,8 +10,8 @@
   "scripts": {
     "lint": "eslint ./src/**",
     "build": "node build",
-    "build-docs": "webpack --config ./docs/webpack.config.js",
-    "gh-docs": "gh-pages -d docs -m 'Deployed to Github Pages'"
+    "build-docs": "poi build",
+    "gh-docs": "npm run build-docs && gh-pages -d 'docs/dist' -m 'Deployed to Github Pages'"
   },
   "repository": {
     "type": "git",
@@ -34,26 +34,20 @@
   },
   "homepage": "https://github.com/dalphyx/vue-top-progress#readme",
   "devDependencies": {
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "css-loader": "^0.28.4",
-    "eslint": "^4.4.1",
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/preset-stage-2": "^7.0.0-beta.46",
+    "eslint": "^4.19.1",
     "eslint-config-dalphyx": "^0.2.0",
-    "eslint-loader": "^1.9.0",
-    "extract-text-webpack-plugin": "^3.0.0",
     "gh-pages": "^1.0.0",
-    "pokore": "^0.2.1",
-    "postcss-loader": "^2.0.6",
-    "rollup": "^0.50.0",
-    "rollup-plugin-babel": "^3.0.1",
-    "rollup-plugin-uglify": "^2.0.1",
-    "rollup-plugin-vue": "^2.4.1",
-    "style-loader": "^0.18.2",
-    "vue": "^2.4.4",
-    "vue-loader": "^13.0.4",
-    "vue-template-compiler": "^2.4.4",
-    "webpack": "^3.6.0"
-  }
+    "poi": "^10.1.5",
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^4.0.0-beta.4",
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-vue": "^3.0.0",
+    "stylus-loader": "^3.0.2",
+    "vue": "^2.5.16",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "dependencies": {}
 }
